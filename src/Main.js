@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import store from './store'
+// import { Provider } from 'react-redux'
+// import store from './store'
 
 import {
   View,
   Text,
+  Navigator
 } from 'react-native'
+import Timeline from './components/Timeline'
 
 class Main extends Component {
   constructor(props) {
@@ -14,9 +16,24 @@ class Main extends Component {
   
   render() {
     return (
-      <Provider store={ store }>
-        
-      </Provider>
+      <Navigator
+        initialRoute={
+          {
+            title: 'Timeline'
+          }
+        }
+        renderScene={
+          (route, navigator) => {
+            switch (route.title) {
+              case 'Timeline':
+                return <Timeline navigator={ navigator } />
+                break
+              default:
+                return <Timeline navigator={ navigator } />
+            }
+          }}
+        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FadeAndroid }
+      />
     )
   }
 }
