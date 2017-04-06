@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class becanda extends Component {
+export default class Becanda extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('becanda', () => becanda);
+AppRegistry.registerComponent('Becanda', () => Becanda);

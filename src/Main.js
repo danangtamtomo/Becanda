@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { Provider } from 'react-redux'
+import store from './store'
+
 import {
   View,
   Text,
@@ -11,9 +14,9 @@ class Main extends Component {
   
   render() {
     return (
-      <View>
-            
-      </View>
+      <Provider store={ store }>
+        
+      </Provider>
     )
   }
 }

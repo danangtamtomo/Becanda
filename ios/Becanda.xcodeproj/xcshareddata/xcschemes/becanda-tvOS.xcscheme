@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "becanda-tvOS.app"
-               BlueprintName = "becanda-tvOS"
-               ReferencedContainer = "container:becanda.xcodeproj">
+               BuildableName = "Becanda-tvOS.app"
+               BlueprintName = "Becanda-tvOS"
+               ReferencedContainer = "container:Becanda.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "becanda-tvOSTests.xctest"
-               BlueprintName = "becanda-tvOSTests"
-               ReferencedContainer = "container:becanda.xcodeproj">
+               BuildableName = "Becanda-tvOSTests.xctest"
+               BlueprintName = "Becanda-tvOSTests"
+               ReferencedContainer = "container:Becanda.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "becanda-tvOSTests.xctest"
-               BlueprintName = "becanda-tvOSTests"
-               ReferencedContainer = "container:becanda.xcodeproj">
+               BuildableName = "Becanda-tvOSTests.xctest"
+               BlueprintName = "Becanda-tvOSTests"
+               ReferencedContainer = "container:Becanda.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "becanda-tvOS.app"
-            BlueprintName = "becanda-tvOS"
-            ReferencedContainer = "container:becanda.xcodeproj">
+            BuildableName = "Becanda-tvOS.app"
+            BlueprintName = "Becanda-tvOS"
+            ReferencedContainer = "container:Becanda.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "becanda-tvOS.app"
-            BlueprintName = "becanda-tvOS"
-            ReferencedContainer = "container:becanda.xcodeproj">
+            BuildableName = "Becanda-tvOS.app"
+            BlueprintName = "Becanda-tvOS"
+            ReferencedContainer = "container:Becanda.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "becanda-tvOS.app"
-            BlueprintName = "becanda-tvOS"
-            ReferencedContainer = "container:becanda.xcodeproj">
+            BuildableName = "Becanda-tvOS.app"
+            BlueprintName = "Becanda-tvOS"
+            ReferencedContainer = "container:Becanda.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
