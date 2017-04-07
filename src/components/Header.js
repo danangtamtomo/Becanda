@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text,
+  TextInput,
   Image
 } from 'react-native'
 import { HeaderStyle } from './Styles'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 class Header extends Component {
   constructor(props) {
@@ -13,12 +14,18 @@ class Header extends Component {
   
   render() {
     return (
-      <View style={ HeaderStyle.container }>
-        <Image
-          source={ require('../images/logo.png') }
-          style={ HeaderStyle.image }
+    <View style={ HeaderStyle.container }>
+      <View style={ HeaderStyle.wrapper }>
+        <TextInput
+          style={ HeaderStyle.search }
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Icon
+          name="search"
+          style={ HeaderStyle.searchIcon }
         />
       </View>
+    </View>
     )
   }
 }

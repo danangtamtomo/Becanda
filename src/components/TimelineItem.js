@@ -15,7 +15,7 @@ class TimelineItem extends Component {
     return (
       <View style={ TimelineItemStyle.container }>
         <Image
-          source={ { uri: 'http://loremflickr.com/320/240/paris' } }
+          source={ { uri: 'https://unsplash.it/200/300/?random' } }
           style={ TimelineItemStyle.image }
         >
           <View style={ TimelineItemStyle.titleContainer }>

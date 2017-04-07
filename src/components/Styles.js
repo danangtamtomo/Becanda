@@ -1,17 +1,47 @@
 export const HeaderStyle = {
   container: {
     width: '100%',
-    height: 60,
     backgroundColor: '#24231d',
-    justifyContent: 'center',
     flexDirection: 'column',
+    // alignItems: ''
+  },
+  wrapper: {
+    flexDirection: 'row',
+    marginTop: 30,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   image: {
-    width: 150,
-    height: 120,
+    width: 190,
+    height: 80,
+    marginTop: 10
   },
   title: {
     color: '#fff'
+  },
+  search: {
+    height: 40,
+    width: '85%',
+    backgroundColor: '#fdffff',
+  },
+  searchIcon: {
+    fontSize: 30,
+    padding: 10,
+    color: '#fff'
+  }
+}
+
+export const HeaderNavigatorStyle = {
+  container: {
+    width: '100%',
+    height: '10%',
+    backgroundColor: '#24231d'
+  },
+  backIcon: {
+    marginTop: 16,
+    padding: 10,
+    fontSize: 50,
+    color: '#fff874'
   }
 }
 
@@ -20,7 +50,6 @@ export const TimelineStyle = {
     width: '100%',
     height: '100%',
     backgroundColor: '#fff874',
-    padding: 3,
   },
   headerText: {
     fontSize: 18
@@ -31,16 +60,12 @@ export const TimelineItemStyle = {
   container: {
     width: '100%',
     height: 200,
-    //backgroundColor: '#fff874',//'rgba(255, 255, 255, 0.67)',
     marginBottom: 3,
-    // borderColor: 'rgba(0, 0, 0, 0.3)',
-    // borderStyle: 'solid',
-    // borderWidth: 1
   },
   titleContainer: {
     width: '100%',
-    height: 50,
-    backgroundColor: 'rgba(255, 255, 61, 0.6)'
+    height: 70,
+    backgroundColor: 'rgba(255, 255, 61, 0.25)'
   },
   title: {
     padding: 5,
@@ -60,10 +85,48 @@ export const FooterStyle ={
   container: {
     width: '100%',
     height: '30%',
-    backgroundColor: '#24231d'
+    backgroundColor: '#24231d',
+    alignItems: 'center',
   },
   post: {
-    color: '#fff874',
-    textAlign: 'center'
+    color: '#000',
+  },
+  createButton: {
+    width: '20%',
+    height: '100%',
+    // backgroundColor: '#fff874',
+    alignItems: 'center',
+  },
+  addIcon: {
+    padding: 5,
+    fontSize: 60
   }
 }
+
+export const CreatorStyle = {
+  container: {
+    marginTop: 3,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#fff'
+  },
+  card: {
+    width: '100%',
+    height: '40%',
+    backgroundColor: '#24231d',
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+  optionMenuIcon: {
+    fontSize: 30,
+    padding: 5
+  },
+  optionMenus: {
+    borderBottomWidth: 1.5,
+    borderTopWidth: 0,
+    borderTopColor: 'rgba(rgba(0,0,0,0.48)',
+    borderBottomColor: 'rgba(rgba(0,0,0,0.48)',
+    flexDirection: 'row-reverse'
+  }
+}
+

@@ -8,6 +8,7 @@ import {
   Navigator
 } from 'react-native'
 import Timeline from './components/Timeline'
+import Creator from './components/Creator'
 
 class Main extends Component {
   constructor(props) {
@@ -28,11 +29,14 @@ class Main extends Component {
               case 'Timeline':
                 return <Timeline navigator={ navigator } />
                 break
+              case 'Creator':
+                return <Creator navigator={ navigator } />
+                break
               default:
                 return <Timeline navigator={ navigator } />
             }
           }}
-        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FadeAndroid }
+        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FloatFromBottom }
       />
     )
   }

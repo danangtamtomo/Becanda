@@ -31,12 +31,13 @@ class Timeline extends Component {
           <Header/>
           <View style={ TimelineStyle.container }>
             <StatusBar
-              backgroundColor={'#24231d' }
+              backgroundColor={'rgba(0, 0, 0, 0.5)' }
+              translucent={ true }
             />
             { dummyData.map(dummy => <TimelineItem key={ dummy.id } timeline={ dummy }/>) }
           </View>
         </ScrollView>
-        <Footer/>
+        <Footer navigator={ this.props.navigator }/>
       </View>
     )
   }
