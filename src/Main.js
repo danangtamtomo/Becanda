@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-// import { Provider } from 'react-redux'
-// import store from './store'
-
+import { connect } from 'react-redux'
 import {
-  View,
-  Text,
   Navigator
 } from 'react-native'
 import Timeline from './components/Timeline'
@@ -20,26 +16,31 @@ class Main extends Component {
       <Navigator
         initialRoute={
           {
-            title: 'Timeline'
+            scene: 'Timeline'
           }
         }
         renderScene={
           (route, navigator) => {
-            switch (route.title) {
+            switch (this.props.navigatorState.navigator.scene) {
               case 'Timeline':
-                return <Timeline navigator={ navigator } />
+                return <Timeline/>
                 break
               case 'Creator':
-                return <Creator navigator={ navigator } />
+                return <Creator/>
                 break
+              case 'Back':
+                navigator.pop()
               default:
-                return <Timeline navigator={ navigator } />
+                return <Timeline/>
             }
           }}
-        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FloatFromBottom }
+        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid }
       />
     )
   }
 }
 
-export default Main
+const mapStateToProps = state => ({
+  navigatorState: state
+})
+export default connect(mapStateToProps, null)(Main)

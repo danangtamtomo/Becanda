@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { NavigatorActions } from '../actions'
 import {
   View,
   TouchableHighlight,
@@ -18,7 +20,7 @@ class Footer extends Component {
         <TouchableHighlight
           underlayColor={ '#201a0f' }
           style={ FooterStyle.createButton }
-          onPress={ () => this.props.navigator.push({ title: 'Creator' }) }>
+          onPress={ () => this.props.navigateToCreator({ scene: 'Creator' }) }>
           <Text style={ FooterStyle.post }><Icon style={ FooterStyle.addIcon } name="add-circle" color="#fff874"/></Text>
         </TouchableHighlight>
       </View>
@@ -26,4 +28,8 @@ class Footer extends Component {
   }
 }
 
-export default Footer
+const mapDispatchToProps = dispatch => ({
+  navigateToCreator: payloads => dispatch(NavigatorActions.navigateToCreator(payloads))
+})
+
+export default connect(null, mapDispatchToProps)(Footer)

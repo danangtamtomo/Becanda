@@ -5,6 +5,8 @@ import {
   Text,
   StatusBar
 } from 'react-native'
+import { connect } from 'react-redux'
+import { NavigatorActions } from '../actions'
 import { HeaderNavigatorStyle } from './Styles'
 import Icon from 'react-native-vector-icons/EvilIcons'
 
@@ -16,7 +18,7 @@ class HeaderNavigator extends Component {
   render() {
     return (
       <View style={ HeaderNavigatorStyle.container }>
-        <TouchableHighlight onPress={ () => this.props.navigator.pop() }>
+        <TouchableHighlight onPress={ () => this.props.navigateBack() }>
           <Icon name="chevron-left" style={ HeaderNavigatorStyle.backIcon }/>
         </TouchableHighlight>
       </View>
@@ -24,4 +26,8 @@ class HeaderNavigator extends Component {
   }
 }
 
-export default HeaderNavigator
+const mapDispatchToProps = dispatch => ({
+  navigateBack: () => dispatch(NavigatorActions.navigateBack())
+})
+
+export default connect(null, mapDispatchToProps)(HeaderNavigator)

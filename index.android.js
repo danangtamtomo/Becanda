@@ -5,18 +5,19 @@
  */
 
 import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import store from './src/store'
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
 import Main from './src/Main'
 
 export default class Becanda extends Component {
   render() {
     return (
-      <Main/>
+      <Provider store={ store }>
+        <Main/>
+      </Provider>
     );
   }
 }
