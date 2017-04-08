@@ -30,10 +30,6 @@ class Timeline extends Component {
         <ScrollView>
           <Header/>
           <View style={ TimelineStyle.container }>
-            <StatusBar
-              backgroundColor={'rgba(0, 0, 0, 0.5)' }
-              translucent={ true }
-            />
             { dummyData.map(dummy => <TimelineItem key={ dummy.id } timeline={ dummy }/>) }
           </View>
         </ScrollView>

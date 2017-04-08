@@ -5,6 +5,7 @@ import {
   Image
 } from 'react-native'
 import { TimelineItemStyle } from './Styles'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 class TimelineItem extends Component {
   constructor(props) {
@@ -20,6 +21,15 @@ class TimelineItem extends Component {
         >
           <View style={ TimelineItemStyle.titleContainer }>
             <Text style={ TimelineItemStyle.title }>{ this.props.timeline.title }</Text>
+            <View style={ TimelineItemStyle.options }>
+              <Icon
+                name="thumbs-o-up"
+                style={ TimelineItemStyle.optionIcon }
+              />
+              <Text style={ TimelineItemStyle.optionText }>
+                20 Likes
+              </Text>
+            </View>
           </View>
         </Image>
       </View>

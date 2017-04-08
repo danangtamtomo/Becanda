@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import {
   View,
   TouchableHighlight,
-  Text,
-  StatusBar
 } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigatorActions } from '../actions'
@@ -18,7 +16,11 @@ class HeaderNavigator extends Component {
   render() {
     return (
       <View style={ HeaderNavigatorStyle.container }>
-        <TouchableHighlight onPress={ () => this.props.navigateBack() }>
+        <TouchableHighlight
+          onPress={ () => this.props.navigateBack() }
+          style={ HeaderNavigatorStyle.backButton }
+          underlayColor={ 'rgba(0, 0, 0, 0.4)' }
+        >
           <Icon name="chevron-left" style={ HeaderNavigatorStyle.backIcon }/>
         </TouchableHighlight>
       </View>

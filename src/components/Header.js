@@ -19,10 +19,8 @@ class Header extends Component {
         <TextInput
           style={ HeaderStyle.search }
           onChangeText={(text) => this.setState({text})}
-        />
-        <Icon
-          name="search"
-          style={ HeaderStyle.searchIcon }
+          underlineColorAndroid='transparent'
+          placeholder={ 'Search...' }
         />
       </View>
     </View>

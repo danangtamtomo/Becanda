@@ -21,7 +21,7 @@ class Footer extends Component {
           underlayColor={ '#201a0f' }
           style={ FooterStyle.createButton }
           onPress={ () => this.props.navigateToCreator({ scene: 'Creator' }) }>
-          <Text style={ FooterStyle.post }><Icon style={ FooterStyle.addIcon } name="add-circle" color="#fff874"/></Text>
+          <Text style={ FooterStyle.post }><Icon style={ FooterStyle.addIcon } name="add-circle"/></Text>
         </TouchableHighlight>
       </View>
     )

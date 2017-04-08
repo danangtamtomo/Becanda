@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
-  Navigator
+  Navigator,
+  View,
+  StatusBar
 } from 'react-native'
 import Timeline from './components/Timeline'
 import Creator from './components/Creator'
@@ -13,29 +15,40 @@ class Main extends Component {
   
   render() {
     return (
-      <Navigator
-        initialRoute={
-          {
-            scene: 'Timeline'
-          }
+      <View style={
+        {
+          width: '100%',
+          height: '100%'
         }
-        renderScene={
-          (route, navigator) => {
-            switch (this.props.navigatorState.navigator.scene) {
-              case 'Timeline':
-                return <Timeline/>
-                break
-              case 'Creator':
-                return <Creator/>
-                break
-              case 'Back':
-                navigator.pop()
-              default:
-                return <Timeline/>
+      }>
+        <StatusBar
+          backgroundColor={'rgba(0, 0, 0, 0.5)' }
+          translucent={ true }
+        />
+        <Navigator
+          initialRoute={
+            {
+              scene: 'Timeline'
             }
-          }}
-        configureScene={ (route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid }
-      />
+          }
+          renderScene={
+            (route, navigator) => {
+              switch (this.props.navigatorState.navigator.scene) {
+                case 'Timeline':
+                  return <Timeline/>
+                  break
+                case 'Creator':
+                  return <Creator/>
+                  break
+                case 'Back':
+                  navigator.pop()
+                default:
+                  return <Timeline/>
+              }
+            }}
+          configureScene={ (route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid }
+        />
+      </View>
     )
   }
 }

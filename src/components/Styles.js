@@ -1,8 +1,10 @@
 export const HeaderStyle = {
   container: {
     width: '100%',
-    backgroundColor: '#24231d',
+    backgroundColor: 'rgba(0, 0, 0, 0)',
     flexDirection: 'column',
+    zIndex: 200,
+    position: 'absolute'
     // alignItems: ''
   },
   wrapper: {
@@ -23,6 +25,7 @@ export const HeaderStyle = {
     height: 40,
     width: '85%',
     backgroundColor: '#fdffff',
+    padding: 10
   },
   searchIcon: {
     fontSize: 30,
@@ -37,8 +40,11 @@ export const HeaderNavigatorStyle = {
     height: '10%',
     backgroundColor: '#24231d'
   },
+  backButton: {
+    marginTop: 15,
+    width: '20%'
+  },
   backIcon: {
-    marginTop: 16,
     padding: 10,
     fontSize: 50,
     color: '#fff874'
@@ -49,7 +55,7 @@ export const TimelineStyle = {
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#fff874',
+    // backgroundColor: '#fff874',
   },
   headerText: {
     fontSize: 18
@@ -60,14 +66,15 @@ export const TimelineItemStyle = {
   container: {
     width: '100%',
     height: 200,
-    marginBottom: 3,
+    // marginBottom: 3,
   },
   titleContainer: {
     width: '100%',
     height: 70,
-    backgroundColor: 'rgba(255, 255, 61, 0.25)'
+    backgroundColor: 'rgba(22, 22, 61, 0.25)',
   },
   title: {
+    color: '#fff',
     padding: 5,
     fontWeight: 'bold',
     fontSize: 16
@@ -77,35 +84,48 @@ export const TimelineItemStyle = {
     height: 200,
     flexDirection: 'column-reverse',
     alignItems: 'flex-end',
+  },
+  options: {
+    width: '100%',
+    height: 50,
+    padding: 5,
+    flexDirection: 'row-reverse',
+    justifyContent: 'space-between'
+  },
+  optionIcon: {
+    fontSize: 20,
+    color: '#fff'
+  },
+  optionText: {
+    color: '#fff'
   }
-
 }
 
 export const FooterStyle ={
   container: {
     width: '100%',
-    height: '30%',
+    height: '35%',
     backgroundColor: '#24231d',
     alignItems: 'center',
   },
   post: {
-    color: '#000',
+    color: '#ef7616',
   },
   createButton: {
     width: '20%',
     height: '100%',
-    // backgroundColor: '#fff874',
+    marginTop: 10,
     alignItems: 'center',
   },
   addIcon: {
     padding: 5,
-    fontSize: 60
+    fontSize: 60,
+    color: '#08ccca',
   }
 }
 
 export const CreatorStyle = {
   container: {
-    marginTop: 3,
     width: '100%',
     height: '100%',
     backgroundColor: '#fff'
@@ -113,7 +133,7 @@ export const CreatorStyle = {
   card: {
     width: '100%',
     height: '40%',
-    backgroundColor: '#24231d',
+    backgroundColor: '#08ccca',
     alignItems: 'center',
     flexDirection: 'column'
   },
@@ -122,10 +142,10 @@ export const CreatorStyle = {
     padding: 5
   },
   optionMenus: {
-    borderBottomWidth: 1.5,
-    borderTopWidth: 0,
-    borderTopColor: 'rgba(rgba(0,0,0,0.48)',
-    borderBottomColor: 'rgba(rgba(0,0,0,0.48)',
+    // borderBottomWidth: 1.5,
+    // borderTopWidth: 0,
+    // borderTopColor: 'rgba(rgba(0,0,0,0.48)',
+    // borderBottomColor: 'rgba(rgba(0,0,0,0.48)',
     flexDirection: 'row-reverse'
   }
 }
