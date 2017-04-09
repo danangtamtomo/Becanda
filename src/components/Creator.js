@@ -1,62 +1,36 @@
 import React, { Component } from 'react'
 import {
   View,
-  TouchableHighlight,
-  Picker,
-  Text,
-  CameraRoll
+  ScrollView
 } from 'react-native'
+import { connect } from 'react-redux'
+import RNFetchBlob from 'react-native-fetch-blob'
 import HeaderNavigator from './HeaderNavigator'
-import { CreatorStyle, CreatorCard } from './Styles'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import CardCreator from './CardCreator'
+import ImagePicker from 'react-native-image-picker'
+import { CreatorStyle } from './Styles'
 
 class Creator extends Component {
   constructor(props) {
     super(props)
   }
-  
+
   render() {
-    let box = []
-
-
     return (
-      <View>
-        <HeaderNavigator navigator={ this.props.navigator }/>
-        <View style={ CreatorStyle.container }>
-          <View style={ CreatorStyle.card }>
-
+      <View style={ {width: '100%', height: '100%'} }>
+        <HeaderNavigator/>
+        <ScrollView style={ {width: '100%', height: '100%'} }>
+          <View style={ CreatorStyle.container }>
+              { this.props.cards.map((card, index) => <CardCreator key={ index } index={ index } card={ card }/>) }
           </View>
-          <View style={ CreatorStyle.optionMenus }>
-            <TouchableHighlight
-              underlayColor={ '#fdffca' }
-              onPress={ () => {} }
-            >
-              <Icon name="attachment" style={ CreatorStyle.optionMenuIcon }/>
-            </TouchableHighlight>
-
-            <TouchableHighlight
-              underlayColor={ '#fdffca' }
-              onPress={ () => {} }
-            >
-              <Icon name="keyboard-arrow-down" style={ CreatorStyle.optionMenuIcon }/>
-            </TouchableHighlight>
-
-            <TouchableHighlight
-              underlayColor={ '#fdffca' }
-              onPress={ () => {} }
-            >
-              <Icon name="remove-circle" style={ CreatorStyle.optionMenuIcon }/>
-            </TouchableHighlight>
-
-            <Picker>
-              <Picker.Item label="Java" value="java" />
-              <Picker.Item label="JavaScript" value="js" />
-            </Picker>
-          </View>
-        </View>
+        </ScrollView>
       </View>
     )
   }
 }
 
-export default Creator
+const mapStateToProps = state => ({
+  cards: state.cards
+})
+
+export default connect(mapStateToProps, null)(Creator)

@@ -1,7 +1,6 @@
 package com.becanda;
 
 import com.facebook.react.ReactActivity;
-import java.util.Arrays; // <--- import this if you want to specify which fonts to load
 
 public class MainActivity extends ReactActivity {
 

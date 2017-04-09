@@ -1,4 +1,4 @@
-export const navigator = (state = 'TIMELINE_SCENE', action) => {
+export const navigator = (state = '', action) => {
   switch(action.type) {
     case 'TIMELINE_SCENE':
       return action.payloads
@@ -10,6 +10,6 @@ export const navigator = (state = 'TIMELINE_SCENE', action) => {
         scene: 'Back'
       }
     default:
-      return 'TIMELINE_SCENE'
+      return state
   }
 }

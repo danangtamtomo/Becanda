@@ -38,7 +38,9 @@ export const HeaderNavigatorStyle = {
   container: {
     width: '100%',
     height: '10%',
-    backgroundColor: '#24231d'
+    backgroundColor: '#24231d',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   backButton: {
     marginTop: 15,
@@ -47,6 +49,11 @@ export const HeaderNavigatorStyle = {
   backIcon: {
     padding: 10,
     fontSize: 50,
+    color: '#fff874'
+  },
+  addCardIcon: {
+    padding: 10,
+    fontSize: 40,
     color: '#fff874'
   }
 }
@@ -128,14 +135,17 @@ export const CreatorStyle = {
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#fff'
+  },
+  cardContainer: {
+    width: '100%',
+    height: '40%',
   },
   card: {
     width: '100%',
-    height: '40%',
-    backgroundColor: '#08ccca',
+    height: 250,
+    backgroundColor: '#84918e',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   optionMenuIcon: {
     fontSize: 30,
@@ -146,7 +156,13 @@ export const CreatorStyle = {
     // borderTopWidth: 0,
     // borderTopColor: 'rgba(rgba(0,0,0,0.48)',
     // borderBottomColor: 'rgba(rgba(0,0,0,0.48)',
-    flexDirection: 'row-reverse'
+    flexDirection: 'row-reverse',
+    backgroundColor: '#ffaa1a',
+  },
+  imageAttach: {
+    padding: 5,
+    width: '100%',
+    height: '100%'
   }
 }
 
