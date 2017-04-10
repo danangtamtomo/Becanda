@@ -144,8 +144,8 @@ export const CreatorStyle = {
     width: '100%',
     height: 250,
     backgroundColor: '#84918e',
-    alignItems: 'center',
-    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    flexDirection: 'row',
   },
   optionMenuIcon: {
     fontSize: 30,
