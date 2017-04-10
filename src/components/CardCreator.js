@@ -19,10 +19,8 @@ class CardCreator extends Component{
       soundMeta: {},
       playerIcon: 'play-arrow'
     }
-    this.player
+    this.player = null
   }
-
-
 
   _filePick() {
     FilePickerManager.showFilePicker(null, response => {
@@ -53,7 +51,6 @@ class CardCreator extends Component{
         this.player.release()
       })
     })
-    this.player.setVolume(0.5);
   }
 
   _pauseSound() {
@@ -66,7 +63,12 @@ class CardCreator extends Component{
         <View style={ CreatorStyle.card }>
           <TouchableHighlight
             underlayColor={ '#fdffca' }
-            onPress={ () => this.props.removeCard(this.props.index) }
+            onPress={ () => {
+              if (this.player !== null) {
+                this.player.release()
+              }
+              this.props.removeCard(this.props.index)
+            }}
             style={ { position: 'absolute' , zIndex: 200} }
           >
             <Icon name="close" style={ CreatorStyle.optionMenuIcon }/>

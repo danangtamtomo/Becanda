@@ -7,8 +7,8 @@ import { connect } from 'react-redux'
 import RNFetchBlob from 'react-native-fetch-blob'
 import HeaderNavigator from './HeaderNavigator'
 import CardCreator from './CardCreator'
-import ImagePicker from 'react-native-image-picker'
 import { CreatorStyle } from './Styles'
+import { CreatorActions } from '../actions'
 
 class Creator extends Component {
   constructor(props) {
@@ -33,4 +33,8 @@ const mapStateToProps = state => ({
   cards: state.cards
 })
 
-export default connect(mapStateToProps, null)(Creator)
+const mapDispatchToProps = dispatch => ({
+  submitCards: () => dispatch(CreatorActions.submitCards)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Creator)
