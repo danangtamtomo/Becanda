@@ -157,6 +157,7 @@ export const CreatorStyle = {
     // borderTopColor: 'rgba(rgba(0,0,0,0.48)',
     // borderBottomColor: 'rgba(rgba(0,0,0,0.48)',
     flexDirection: 'row-reverse',
+    alignItems: 'center',
     backgroundColor: '#ffaa1a',
   },
   imageAttach: {

@@ -14,9 +14,7 @@ export const cards = (state = [{image: '', sound: ''}], action) => {
     case 'ATTACH_FILE':
       return state.map((card, index) => {
         if (index === action.key) {
-          return Object.assign({}, card, {
-            image: action.updatedCard.image
-          })
+          return Object.assign({}, card, action.updatedCard)
         }
         return card
       })

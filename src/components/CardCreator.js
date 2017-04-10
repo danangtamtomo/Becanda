@@ -16,14 +16,15 @@ class CardCreator extends Component{
   constructor(props) {
     super(props)
     this.state = {
-      soundPath: ''
+      soundMeta: {},
+      playerIcon: 'play-arrow'
     }
     this.player
   }
 
 
 
-  _filePickTest() {
+  _filePick() {
     FilePickerManager.showFilePicker(null, response => {
       if (response.didCancel) {
         console.log('User cancelled file picker');
@@ -32,15 +33,16 @@ class CardCreator extends Component{
         console.log('FilePickerManager Error: ', response.error);
       }
       else {
-        this.setState({
-          soundPath: response.path
-        });
+        this.props.attachSound(this.props.index, response.path, this.props.card)
+        // this.setState({
+        //   soundPath: response.path
+        // })
       }
     })
   }
 
   _playSound() {
-    this.player = new Sound(this.state.soundPath, Sound.MAIN_BUNDLE, (error) => {
+    this.player = new Sound(this.props.card.sound, Sound.MAIN_BUNDLE, (error) => {
       if (error) {
         console.log('failed to load the sound', error);
         return;
@@ -75,14 +77,14 @@ class CardCreator extends Component{
         <View style={ CreatorStyle.optionMenus }>
           <TouchableHighlight
             underlayColor={ '#fdffca' }
-            onPress={ () => this.props.attachFile(this.props.index, this.props.card) }
+            onPress={ () => this.props.attachImage(this.props.index, this.props.card) }
           >
             <Icon name="collections" style={ CreatorStyle.optionMenuIcon }/>
           </TouchableHighlight>
 
           <TouchableHighlight
             underlayColor={ '#fdffca' }
-            onPress={ () => this._filePickTest() }
+            onPress={ () => this._filePick() }
           >
             <Icon name="attachment" style={ CreatorStyle.optionMenuIcon }/>
           </TouchableHighlight>
@@ -98,6 +100,11 @@ class CardCreator extends Component{
           >
             <Icon name="pause" style={ CreatorStyle.optionMenuIcon }/>
           </TouchableHighlight>
+          <Text style={
+            {
+              fontSize: 11
+            }
+          }>{ this.props.card.sound.split('/')[5] }</Text>
         </View>
       </View>
     )
@@ -108,7 +115,8 @@ class CardCreator extends Component{
 const mapDispatchToProps = dispatch => ({
   addCard: () => dispatch(CreatorActions.addCard()),
   removeCard: key => dispatch(CreatorActions.removeCard(key)),
-  attachFile: (key, card) => dispatch(CreatorActions.attachFile(key, card))
+  attachImage: (key, card) => dispatch(CreatorActions.attachImage(key, card)),
+  attachSound: (key, source, card) => dispatch(CreatorActions.attachSound(key, source, card))
 })
 
 export default connect(null, mapDispatchToProps)(CardCreator)

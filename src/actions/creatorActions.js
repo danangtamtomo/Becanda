@@ -11,8 +11,12 @@ creatorActions.removeCard = key => ({
 })
 
 
+creatorActions.attachSound = (key, source, card) => dispatch => {
+  let soundSource = { sound: source }
+  dispatch(creatorActions.attach(key, soundSource, card))
+}
 
-creatorActions.attachFile = (key, card) => {
+creatorActions.attachImage = (key, card) => {
   return dispatch => {
     var options = {
       title: 'Pick Picture',
@@ -34,7 +38,7 @@ creatorActions.attachFile = (key, card) => {
         // ImagePicker.launchImageLibrary(options, (response)  => {
         //   // Same code as in above section!
         // });
-        let source = { uri: response.uri };
+        let source = { image: response.uri };
         // You can also display the image using data:
         // let source = { uri: 'data:image/jpeg;base64,' + response.data };
         dispatch(creatorActions.attach(key, source, card))
@@ -43,13 +47,13 @@ creatorActions.attachFile = (key, card) => {
   }
 }
 
-creatorActions.attach = (key, source, card) => ({
-  type: 'ATTACH_FILE',
-  key: key,
-  updatedCard: Object.assign(card, {
-    image: source.uri
-  })
-})
+creatorActions.attach = (key, source, card) => {
+  return {
+    type: 'ATTACH_FILE',
+    key: key,
+    updatedCard: Object.assign(card, source)
+  }
+}
 
 export default creatorActions
 
